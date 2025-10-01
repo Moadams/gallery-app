@@ -4,10 +4,11 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "256",
   "memory": "512",
-  "executionRoleArn": "arn:aws:iam::677276091734:role/gallery-app-stack-ECSTaskExecutionRole",
+  "executionRoleArn": "arn:aws:iam::677276091734:role/gallery-app-ECSTaskExecutionRole",
+  "taskRoleArn": "arn:aws:iam::677276091734:role/gallery-app-ecs-task-role",
   "containerDefinitions": [
     {
-      "name": "gallery-app-stack-container",
+      "name": "gallery-app-container",
       "image": "<IMAGE1_NAME>",
       "portMappings": [
         {
@@ -19,18 +20,8 @@
         "options": {
           "awslogs-group": "/ecs/gallery-app-log-group",
           "awslogs-region": "eu-west-1",
-          "awslogs-stream-prefix": "gallery-app-container-log"
+          "awslogs-stream-prefix": "gallery-app"
         }
-      },
-      "HealthCheck": {
-        "Command": [
-          "CMD-SHELL",
-          "curl -f http://localhost:8080/ || exit 1"
-        ],
-        "Interval": 30,
-        "Timeout": 5,
-        "Retries": 3,
-        "StartPeriod": 120
       }
     }
   ]
