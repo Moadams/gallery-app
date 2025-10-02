@@ -74,5 +74,5 @@ jobs:
           cd deployment
           zip ../codepipeline-deployment-files.zip appspec.yml taskdef.json imageDetail.json
           cd ..
-          aws s3 cp codepipeline-deployment-files.zip s3://$S3_BUCKET/codepipeline-deployment-files.zip --region $AWS_REGION
+          aws s3 cp codepipeline-deployment-files.zip s3://$S3_BUCKET/deployment-files.zip --region $AWS_REGION
           echo "Deployment package uploaded to S3"
