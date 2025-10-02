@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: arn:aws:ecs:eu-west-1:677276091734:task-definition/gallery-app-stack-task-definition:2
+        TaskDefinition: arn:aws:ecs:eu-west-1:677276091734:task-definition/gallery-app-task-definition:1
         LoadBalancerInfo:
           ContainerName: gallery-app-container
           ContainerPort: 8080
