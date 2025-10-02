@@ -9,7 +9,7 @@
   "containerDefinitions": [
     {
       "name": "gallery-app-container",
-      "image": "<IMAGE1_NAME>",
+      "image": "677276091734.dkr.ecr.eu-west-1.amazonaws.com/gallery-app-repository:latest",
       "portMappings": [
         {
           "containerPort": 8080
